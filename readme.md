@@ -21,7 +21,7 @@ Az alap feladatok (35 pont)
 [] A Start gombra kattintva új játék indítható. (4 pont)
 [x] A játékoldalon az oszlop kiválasztása történhet egérrel vagy billentyűzettel. (10 pont)
 [x] A játékoldalon a korong animálva esik le. (5 pont)
-[ ] **Késés naponta (-2 pont)**
+[ ] **Késés naponta (-2 pont)** 2 nap
 
 Plusz feladatok (plusz 10 + 5 pont)
 
