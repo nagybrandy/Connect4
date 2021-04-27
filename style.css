@@ -1,0 +1,267 @@
+html{
+    background-color: #131313;
+    font-family: Bebas neue;
+    color: #f6e6f2;
+    background-image: url(back.png);
+    background-size: contain;
+    background-repeat: repeat-x, repeat-y;
+    background-position-y: 300px, 0;
+    background-position-x: 100px, 100px;
+    animation: animatedBackground 40s linear infinite;
+    -moz-animation: animatedBackground 40s linear infinite;
+    -webkit-animation: animatedBackground 40s linear infinite;
+    -ms-animation: animatedBackground 40s linear infinite;
+    -o-animation: animatedBackground 40s linear infinite;
+    animation-iteration-count: infinite
+}
+@font-face {
+    font-family: 'Neon';
+    src: url('Neon.ttf');
+}
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+}
+@-moz-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+}
+@-webkit-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+}
+@-ms-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+}
+@-o-keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: -300px 0; }
+}
+body {
+    margin: auto;
+    width: 70%;
+    margin-top: 30px;
+    text-align: center;
+}
+button {
+    padding: 15px;
+    width: 300px;
+    margin: 30px;
+    border: 2px solid #CD86B9;
+    font-family: NEON;
+    background-color: unset;
+    color: #CD86B9;
+    font-size: 80px;
+    box-shadow: violet 0px 0px 5px,inset violet 0px 0px 5px;
+    text-shadow: violet 0px 0px 5px;
+    transition: 0.2s;
+}
+button:hover {
+    box-shadow: violet 0px 0px 15px,inset violet 0px 0px 10px;
+    text-shadow: violet 0px 0px 15px;
+}
+.animated:hover {
+    animation: 2.0s;
+    clip-path: polygon(5% 10%);
+}
+
+aside {
+    float: right;
+    margin-right:30px;
+    margin-top: 30px;
+    border-radius: 30px;
+    padding: 30px;
+    border: 1px solid #CD86B9;
+    background:rgba(230, 154, 230, 0.123);
+}
+.backtomenu {
+    padding: 5px;
+    width: 150px;
+    margin: 15px;
+    border: 2px solid #CD86B9;
+    font-family: NEON;
+    background-color: unset;
+    box-shadow: violet 0px 0px 3px,inset violet 0px 0px 3px;
+    text-shadow: violet 0px 0px 3px;
+    color: #CD86B9;
+    font-size: 40px;
+    transition: 0.2s;
+}
+table{
+    border-collapse: collapse;
+    background-color: unset;
+    margin-left: auto;
+    margin-right: auto;
+}
+td {
+    width:100px;
+    height:100px;
+    background-position: center;
+}
+#playingfield {
+   margin-left:60px;
+}
+.tablediv {
+    border-top:30px solid hsla(317, 42%, 66%, 0.20);
+    border-bottom:30px solid  hsla(317, 42%, 66%, 0.10);
+    border-left:60px solid hsla(317, 42%, 66%, 0.17);
+    border-right:60px solid hsla(317, 42%, 66%, 0.17);
+    border-radius: 30px;
+    overflow: hidden;
+    width:max-content;
+}
+.tablediv td{
+    background:url(tdback.png);
+    width:100px;
+    height:100px;
+    background-position: center;
+}
+#svg-multi {
+    margin:20px;
+    margin-top: -20px;
+}
+#svg-ai {
+    margin:20px;
+    margin-top: -20px;
+}
+.svg-colored {
+    color: #f6e6f2;
+    filter:grayscale(0%);
+    transition: 0.2s;
+}
+.svg-black{
+    color: grey;
+    filter: grayscale(100%);
+    transition: 0.2s;
+}
+.name {
+    background-color: transparent;
+    border-radius: 30px;
+    color: #CD86B9;
+    border: 2px solid #CD86B9;
+    width: 300px;
+    font-size: 30px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+.time {
+    background-color: transparent;
+    border-radius: 30px;
+    color: #CD86B9;
+    border: 2px solid #CD86B9;
+    width: 100px;
+    height: 20px;
+    font-size: 20px;
+    padding: 10px;
+    margin-left: 20px;
+    text-align: center;
+}
+input:focus {
+    outline:none;
+}
+input:disabled {
+    filter: grayscale(100%);
+}
+.gray {
+    filter: grayscale(100%);
+    transition: 0.2s;
+}
+details {
+    margin-top: 200px;
+    border-radius: 30px;
+    padding: 5px;
+    border: 1px solid #CD86B9;
+    background:rgba(230, 154, 230, 0.123);
+}
+summary {
+    text-align: center;
+}
+.vs {
+    font-size: 30px;
+}
+.basic {
+    color: rgb(192, 191, 191);
+}
+.player1turn {
+    color: #FFFE88;
+    transition: 0.2s;
+}
+.player2turn {
+    color: #CA95BB;
+    transition: 0.2s;
+}
+
+table {
+    overflow: hidden;
+  }
+  
+td, th {
+position: relative;
+vertical-align: bottom;
+}
+#game {
+    margin-top: 100px;
+}
+#gameTable td {
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    cursor: pointer;
+    vertical-align: bottom;
+}
+#gameTable td:hover::after {
+    width: 100%;
+    z-index: -1;
+    top: -5000px;
+    height: 10000px;
+    content: "";
+    position: absolute;
+    background-color: #dd9bca2f;
+    left: 0;
+    
+  }
+  .fall{
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    animation: drop 0.5s ease forwards;
+  }
+  @keyframes drop{
+    0%{opacity: 0}
+    70%{transform: translateY(-700px)}
+    100%{transform: translateY(0px)}
+  }
+
+.invalid {
+      animation: shake 0.2s ease-in-out 0s 2;
+      box-shadow: 0 0 0.5em red;
+  }
+
+@keyframes shake {
+  0% { margin-left: 0rem; }
+  25% { margin-left: 0.5rem; }
+  75% { margin-left: -0.5rem; }
+  100% { margin-left: 0rem; }
+}
+h2 {
+    margin-top: 0;
+}
+#timerBar {
+    height: 30px;
+}
+progress {
+    background: #dd9bca2f;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+progress::-webkit-progress-value {
+    background: #CD86B9;
+    border-radius: 30px;
+}
+  
+progress::-webkit-progress-bar {
+    background: #dd9bca2f;
+    border-radius: 30px;
+}

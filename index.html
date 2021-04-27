@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <link rel="shortcut icon" href="sarga.png" type="image/x-icon">  
+  <title>Connect 4</title>
+  </head>
+  <body>
+      <div id="menu">
+        <img src="logo3.png" width="550px">
+        <br>
+        <table>
+            <tr>
+                <td onclick="Gamemode()"><h2 class="svg-colored" id="text-multi">Multiplayer</h2></td>
+                <td onclick="Gamemode()"><h2 class="svg-black" id="text-ai">VS AI</h2></td>
+            </tr>
+            <tr>
+                <td onclick="Gamemode()"><img src="multi.svg" width="150px" class="svg-colored" id="svg-multi"></td>
+                <td onclick="Gamemode()"><img src="vsai.svg" width="100px" class="svg-black" id="svg-ai"></td>
+            </tr>
+        </table>
+        <form>
+            <input type="text" placeholder="Player1's Name" maxlength="10" class="name" onchange="RemoveError()">
+            <span class="vs">vs</span>
+            <input type="text" placeholder="Player2's Name" maxlength="10" class="name" onchange="RemoveError()">
+            <br>
+            <snap style="font-size:25px;">Round Timer</snap>
+            <input type="number" class="time" id="timerval" value="20" min="20" max="60">
+        </form>
+        <button onclick="Play()"><span class="animated">PLAY</span></button>
+      </div>
+      <div id="game">
+        <aside>
+            <table id="table">
+                <tr>
+                    <td><img width="90px" src="player1.png" id="player1img"></td>
+                    <td><h2>VS.</h2></td>
+                    <td><img width="100px" src="player2.png" id="player2img"></td>
+                </tr>
+                <tr>
+                    <td><h2 id="player1name" class="basic" style="font-size:35px;">Name1</h2></td>
+                    <td></td>
+                    <td><h2 id="player2name"  class="basic" style="font-size:35px;">Name2</h2></td>
+                </tr>
+            </table>
+            <span style="font-size: 30px;">Round Timer</span><br><progress value="20" max="20" id="timerBar"></progress>
+            <br>
+            <button onclick="Menu()" class="backtomenu"><span class="animated">MENU</span></button>
+        </aside>
+        <div class="tablediv">
+        <table id="gameTable" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+        
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+                
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+                
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+                
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+            
+            </tr>
+            <tr>
+                <td class="col1"></td>
+                <td class="col2"></td>
+                <td class="col3"></td>
+                <td class="col4"></td>
+                <td class="col5"></td>
+                <td class="col6"></td>
+                <td class="col7"></td>
+         
+            </tr>
+        </table>
+        </div>
+        </div>
+        <details id="gamerules">
+            <summary><h2>Játékszabály</h2></summary>
+            <code>
+                A Connect four kétszemélyes absztrakt stratégiai táblás játék, az amőba egyik változata. A győzelemhez 4 színünket kell egy vonalba lerakni.
+    
+                <h3>Nézet</h3>
+                A játék egy 7x6-os függőleges kék táblán játszódik, melynek a tetejéből kell bedobálni mindkét játékosnak a saját színét.
+    
+                <h3>Játékmenet</h3>
+                A játékosok felülről csúsztatják bele a táblába a saját színeiket –melyek általában piros és sárga korongok-, így a jelrakások lehetőségei is korlátozottak a többi amőba típusú játékhoz képest. Az a játékos nyer, amelyik függőlegesen, vízszintesen, vagy átlósan kirakott négyet a saját színéből.
+    
+                <h3>Papíron játszható változat</h3>
+                A Connect Four kockás papíron is játszható. A játékos piros és sárga pöttyöket (vagy klasszikusan X-et és O-t) rajzolnak a kockákba. Az nyer, aki a saját színéből (vagy jeléből) négyet kirak függőlegesen, vízszintesen vagy átlósan. A papíros változatban akárhova lehet rakni jelet mert nem esik mindig alulra, mint a kézzelfogható álló táblás változat. Ez a változat számítógépes változatban is megtalálható.
+                </code>
+          </details>
+
+       <script>
+           let isGamemodeMulti = true;
+           let menudiv = document.getElementById("menu");
+           let gamediv = document.getElementById("game");
+           let multiplayer = document.getElementById("svg-multi");
+           let ai = document.getElementById("svg-ai");
+           let multiText = document.getElementById("text-multi");
+           let aiText = document.getElementById("text-ai");
+           let player2TB = document.querySelectorAll(".name");
+           gamediv.style.display = "none";
+           let player1name = document.getElementById("player1name");
+           let player2name = document.getElementById("player2name");
+           let gamerules = document.getElementById("gamerules");
+           let player1img = document.getElementById("player1img");
+           let player2img = document.getElementById("player2img");
+           let gameTable = document.getElementById("gameTable");
+           let isPlayer1turn = true;
+           let roundTime;
+           let timerBar = document.getElementById("timerBar");
+           let downloadTimer;
+            gameTable.onclick = function(event) {
+                let td = event.target.closest('td'); 
+                tmp = td.classList[0]
+                col = tmp[tmp.length-1]
+                Put(col);
+            };
+            
+            function Put(col){
+                column = document.querySelectorAll(".col"+ col);
+                let isFull = true;
+                let j = 0;
+                while(j <= 6 && isFull){
+                    if(column[j].innerHTML === "")
+                    {
+                        isFull = false;
+                    }
+                    j++;
+                }
+                let i = 6;
+                let flag = false;
+                if(!isFull){
+                    while(!flag && i >= 0){
+                        if(column[i].innerHTML === "")
+                        {
+                            cell = column[i];
+                            if(isPlayer1turn){
+                                cell.innerHTML="<img src='sarga.png' width='90' class='fall'/>";
+                            }
+                            else {
+                                cell.innerHTML="<img src='lila.png' width='90' class='fall'/>";
+                            }     
+                            flag = true;
+                            ChangePlayers();
+                        }
+                        i--;
+                    }
+                } else {
+                    if(isGamemodeMulti){
+                        alert("This column is already full.")
+                    } else {
+                        if(isPlayer1turn){
+                            alert("This column is already full.")
+                        } else {
+                            let random = Math.floor(Math.random() * 7);
+                            Put(random);
+                        }   
+                    }
+                }
+            }
+              
+            function sleep(ms) {
+                return new Promise((resolve) => setTimeout(resolve, ms));
+            }
+            async function Mosikalep(){
+                await sleep(700)
+                let random = Math.floor(Math.random() * 7);
+                Put(random);
+            }
+            function ChangePlayers(){
+                if(isPlayer1turn){
+                    isPlayer1turn = false;
+                    player2name.classList.add("player2turn");
+                    player1name.classList.remove("player1turn");
+                    player1img.classList.add("gray");
+                    player2img.classList.remove("gray");
+                    if(!isGamemodeMulti){
+                        if(!isPlayer1turn)
+                            Mosikalep();
+                    }      
+                }
+                else {
+                    player1name.classList.add("player1turn");
+                    player2name.classList.remove("player2turn");
+                    player2img.classList.add("gray");
+                    player1img.classList.remove("gray");
+                    isPlayer1turn = true;
+                    player.src = "sarga.png";
+                }
+                clearInterval(downloadTimer)
+                time(roundTime);
+            }
+           function Play(){
+            roundTime = document.getElementById("timerval").value;
+            timerBar.max = roundTime;
+            time(roundTime);
+            player2img.classList.add("gray");
+            if(player2TB[0].value != "" && player2TB[1].value != ""){
+                if(!isGamemodeMulti){
+                    player2img.src = "mosi.png";
+                }
+                else {
+                    player2img.src = "player2.png";
+                }
+                menudiv.style.display = "none";
+                gamediv.style.display = "block";
+                player1name.innerHTML = player2TB[0].value;
+                player2name.innerHTML = player2TB[1].value;
+                player1name.classList.add("player1turn");
+               }
+            else {
+                if(player2TB[0].value == ""){
+                    player2TB[0].classList.add("invalid");
+                } else {
+                    player2TB[1].classList.add("invalid");
+                }
+            }
+           } 
+           function RemoveError(){
+            if(player2TB[0].value != ""){
+                    player2TB[0].classList.remove("invalid");
+            }
+            if(player2TB[1].value != ""){
+                    player2TB[1].classList.remove("invalid");
+            }
+           }
+           function Menu(){
+            menudiv.style.display = "block";
+            gamediv.style.display = "none";
+            clearInterval(downloadTimer);
+           }
+           function Gamemode(){
+                if(isGamemodeMulti){
+                    multiplayer.classList.remove("svg-colored");
+                    multiplayer.classList.add("svg-black");
+                    multiText.classList.remove("svg-colored");
+                    multiText.classList.add("svg-black");
+                    ai.classList.remove("svg-black");
+                    ai.classList.add("svg-colored");
+                    aiText.classList.remove("svg-black");
+                    aiText.classList.add("svg-colored");
+                    player2TB[1].disabled = true;
+                    player2TB[1].value = "";
+                    player2TB[1].value = "MosAI";
+                } else {
+                    player2TB[1].placeholder = "Player2's Name";
+                    ai.classList.remove("svg-colored");
+                    ai.classList.add("svg-black");
+                    multiplayer.classList.remove("svg-black");
+                    multiplayer.classList.add("svg-colored");
+                    aiText.classList.remove("svg-colored");
+                    aiText.classList.add("svg-black");
+                    multiText.classList.remove("svg-black");
+                    multiText.classList.add("svg-colored");
+                    player2TB[1].disabled = false;
+                    player2TB[1].value = "";
+                }
+                isGamemodeMulti = !isGamemodeMulti;
+           }
+
+           // TIMER
+           function time(timeleft){
+                downloadTimer = setInterval(function(){
+                    if(timeleft <= 0){
+                        clearInterval(downloadTimer);
+                        if(isPlayer1turn){
+                            alert("Player2 WON!")
+                            location.reload();
+                        } else {
+                            alert("Player1 WON!")
+                            location.reload();
+                        }
+                    }
+                    document.getElementById("timerBar").value = timeleft;
+                    timeleft -= 1;
+                }, 1000);
+            }
+
+       </script>
+  </body>
+</html>
