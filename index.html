@@ -111,16 +111,6 @@
                 <td class="col7"></td>
             
             </tr>
-            <tr>
-                <td class="col1"></td>
-                <td class="col2"></td>
-                <td class="col3"></td>
-                <td class="col4"></td>
-                <td class="col5"></td>
-                <td class="col6"></td>
-                <td class="col7"></td>
-         
-            </tr>
         </table>
         </div>
         </div>
@@ -160,6 +150,14 @@
            let roundTime;
            let timerBar = document.getElementById("timerBar");
            let downloadTimer;
+           let table = [];
+            for(let i = 0; i < 6;i++){
+                let temp = [];
+                for(let j = 0; j < 7; j++){
+                    temp.push(0);
+                }
+                table.push(temp);
+            }
             gameTable.onclick = function(event) {
                 let td = event.target.closest('td'); 
                 tmp = td.classList[0]
@@ -171,14 +169,14 @@
                 column = document.querySelectorAll(".col"+ col);
                 let isFull = true;
                 let j = 0;
-                while(j <= 6 && isFull){
-                    if(column[j].innerHTML === "")
+                while(j < 6 && isFull){
+                    if(column[j].innerHTML ==="")
                     {
                         isFull = false;
                     }
                     j++;
                 }
-                let i = 6;
+                let i = 5;
                 let flag = false;
                 if(!isFull){
                     while(!flag && i >= 0){
@@ -187,11 +185,14 @@
                             cell = column[i];
                             if(isPlayer1turn){
                                 cell.innerHTML="<img src='sarga.png' width='90' class='fall'/>";
+                                table[i][col-1] = 1;
                             }
                             else {
                                 cell.innerHTML="<img src='lila.png' width='90' class='fall'/>";
+                                table[i][col-1] = 2;
                             }     
                             flag = true;
+                            CheckVictory(i, col-1)
                             ChangePlayers();
                         }
                         i--;
@@ -203,7 +204,7 @@
                         if(isPlayer1turn){
                             alert("This column is already full.")
                         } else {
-                            let random = Math.floor(Math.random() * 7);
+                            let random = Math.floor(Math.random() * 6);
                             Put(random);
                         }   
                     }
@@ -215,7 +216,7 @@
             }
             async function Mosikalep(){
                 await sleep(700)
-                let random = Math.floor(Math.random() * 7);
+                let random = Math.floor(Math.random() * 6);
                 Put(random);
             }
             function ChangePlayers(){
@@ -236,7 +237,6 @@
                     player2img.classList.add("gray");
                     player1img.classList.remove("gray");
                     isPlayer1turn = true;
-                    player.src = "sarga.png";
                 }
                 clearInterval(downloadTimer)
                 time(roundTime);
@@ -316,17 +316,72 @@
                         clearInterval(downloadTimer);
                         if(isPlayer1turn){
                             alert("Player2 WON!")
-                            location.reload();
+                            Menu();
                         } else {
                             alert("Player1 WON!")
                             location.reload();
+                            Menu();
                         }
                     }
                     document.getElementById("timerBar").value = timeleft;
                     timeleft -= 1;
                 }, 1000);
             }
-
+            function CheckVictory(r,c){
+                // sorok
+                check = table[r][c]
+               for(let i = 0; i < 6; i++){
+                    for(let j = 0; j < 4; j++){
+                        if(table[i][j] == table[i][j+1] && table[i][j] == table[i][j+2] && table[i][j] == table[i][j+3] && table[i][j] != ""){
+                            if(isPlayer1turn){
+                                alert("WINNER: " + player1name.innerHTML);
+                                Menu();
+                            } else {
+                                alert("WINNER: " + player2name.innerHTML);
+                                Menu();
+                            }
+                        }
+                    }
+                }
+                //oszlopok
+                for(let i = 0; i < 7; i++){
+                    for(let j = 0; j < 3; j++){
+                        if(table[j][i] == table[j+1][i] && table[j][i] == table[j+2][i] && table[j+3][i] == table[j][i] && table[j][i] != ""){
+                            if(isPlayer1turn){
+                                alert("WINNER: " + player1name.innerHTML);
+                                Menu();
+                            } else {
+                                alert("WINNER: " + player2name.innerHTML);
+                                Menu();
+                            }
+                        }
+                    }
+                }
+                //atlok
+                for(let i = 3; i < 7; i++){
+                    for(let j = 0; j < 3; j++){
+                        if(check == table[i][j] && check == table[i-2][j+2] && check == table[i-3][j+3] && check != ""){
+                            if(isPlayer1turn){
+                                alert("WINNER: " + player1name.innerHTML);
+                                Menu();
+                            } else {
+                                alert("WINNER: " + player2name.innerHTML);
+                                Menu();
+                            }
+                        }
+                    }
+                }
+            }
+        function Won(){
+            if(isPlayer1turn){
+                alert("WINNER: " + player1name.innerHTML);
+                Menu();
+            } else {
+                alert("WINNER: " + player2name.innerHTML);
+                Menu();
+            }
+        }
+    
        </script>
   </body>
 </html>
