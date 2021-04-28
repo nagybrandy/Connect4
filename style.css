@@ -2,7 +2,7 @@ html{
     background-color: #131313;
     font-family: Bebas neue;
     color: #f6e6f2;
-    background-image: url(back.png);
+    background-image: url(src/back.png);
     background-size: auto;
     background-repeat: repeat-x, repeat-y;
     background-position-y: 300px, 0;
@@ -16,7 +16,7 @@ html{
 }
 @font-face {
     font-family: 'Neon';
-    src: url('Neon.ttf');
+    src: url('src/Neon.ttf');
 }
 @keyframes animatedBackground {
     0% { background-position: 0 0; }
@@ -64,8 +64,11 @@ button {
     text-shadow: violet 0px 0px 5px;
     letter-spacing: 5px;
     animation:  glow 1s ease-in-out infinite alternate;
-    margin-bottom: 450px;
-    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.pic {
+    margin-bottom:100px
 }
 @keyframes glow {
     from {
@@ -131,7 +134,7 @@ td {
     width:max-content;
 }
 .tablediv td{
-    background:url(tdback.png);
+    background:url(src/tdback.png);
     width:100px;
     height:100px;
     background-position: center;
@@ -188,7 +191,7 @@ input:disabled {
     transition: 0.2s;
 }
 details {
-    margin-top: 200px;
+    margin-top: 220px;
     border-radius: 30px;
     padding: 5px;
     border: 1px solid #CD86B9;

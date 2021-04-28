@@ -23,7 +23,7 @@
 - [x] A nyerést vagy döntetlent érzékeli a gép és kiírja. (5 pont)
 - [x] A játék nyitólapjáról elérhető a játék leírása (2 pont)
 - [x] A játék nyitólapján a játékosok nevének megadása (2 pont)
-- [ ] A Start gombra kattintva új játék indítható. (4 pont)
+- [x] A Start gombra kattintva új játék indítható. (4 pont)
 - [x] A játékoldalon az oszlop kiválasztása történhet egérrel vagy billentyűzettel. (10 pont)
 - [x] A játékoldalon a korong animálva esik le. (5 pont
 - [x] **Késés naponta (-2 pont)** (-2*3 pont)
@@ -38,5 +38,5 @@
 ## TO-DO LIST
 - [x] Szebben nézzen ki a győzelem
 - [ ] reszponzivitás telefonra, kisebb képernyőre
-- [ ] kód rendszerezése
-- [ ] fájlok rendszerezése
+- [] kód rendszerezése
+- [x] fájlok rendszerezése

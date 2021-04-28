@@ -5,12 +5,12 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="style.css">
-      <link rel="shortcut icon" href="sarga.png" type="image/x-icon">  
+      <link rel="shortcut icon" href="src/sarga.png" type="image/x-icon">  
   <title>Connect 4</title>
   </head>
   <body>
       <div id="menu">
-        <img src="logo3.png" width="550px">
+        <img src="src/logo3.png" width="45%">
         <br>
         <table>
             <tr>
@@ -18,8 +18,8 @@
                 <td onclick="Gamemode()"><h2 class="svg-black" id="text-ai">VS AI</h2></td>
             </tr>
             <tr>
-                <td onclick="Gamemode()"><img src="multi.svg" width="150px" class="svg-colored" id="svg-multi"></td>
-                <td onclick="Gamemode()"><img src="vsai.svg" width="100px" class="svg-black" id="svg-ai"></td>
+                <td onclick="Gamemode()"><img src="src/multi.svg" width="120px" class="svg-colored" id="svg-multi"></td>
+                <td onclick="Gamemode()"><img src="src/vsai.svg" width="100px" class="svg-black" id="svg-ai"></td>
             </tr>
         </table>
         <form>
@@ -34,11 +34,11 @@
       </div>
       <div id="game">
         <aside>
-            <table id="table">
+            <table>
                 <tr>
-                    <td><img width="90px" src="player1.png" id="player1img"></td>
+                    <td><img width="90px" src="src/player1.png" id="player1img"></td>
                     <td><h2>VS.</h2></td>
-                    <td><img width="100px" src="player2.png" id="player2img"></td>
+                    <td><img width="100px" src="src/player2.png" id="player2img"></td>
                 </tr>
                 <tr>
                     <td><h2 id="player1name" class="basic" style="font-size:35px;">Name1</h2></td>
@@ -116,6 +116,7 @@
         </div>
         <div id="winner">
             <p>WINNER:<span id="winplayer">PLAYER1</span></p>
+            <img src="src/player1.png" width="300" class="pic"><br>
             <button onclick="Menu()" class="backtomenu"><span class="animated">MENU</span></button>
         </div>
         <details id="gamerules">

@@ -53,11 +53,11 @@ function Put(col){
             {
                 cell = column[i];
                 if(isPlayer1turn){
-                    cell.innerHTML="<img src='sarga.png' width='90' class='fall'/>";
+                    cell.innerHTML="<img src='src/sarga.png' width='90' class='fall'/>";
                     table[i][col-1] = 1;
                 }
                 else {
-                    cell.innerHTML="<img src='lila.png' width='90' class='fall'/>";
+                    cell.innerHTML="<img src='src/lila.png' width='90' class='fall'/>";
                     table[i][col-1] = 2;
                 }     
                 flag = true;
@@ -111,16 +111,45 @@ function ChangePlayers(){
     time(roundTime);
 }
 function Play(){
-roundTime = document.getElementById("timerval").value;
-timerBar.max = roundTime;
-time(roundTime);
-player2img.classList.add("gray");
-if(player2TB[0].value != "" && player2TB[1].value != ""){
+    isGamemodeMulti = true;
+    menudiv = document.getElementById("menu");
+    gamediv = document.getElementById("game");
+    windiv = document.getElementById("winner");
+    multiplayer = document.getElementById("svg-multi");
+    ai = document.getElementById("svg-ai");
+    multiText = document.getElementById("text-multi");
+    aiText = document.getElementById("text-ai");
+    player2TB = document.querySelectorAll(".name");
+    gamediv.style.display = "none";
+    windiv.style.display = "none";
+    player1name = document.getElementById("player1name");
+    player2name = document.getElementById("player2name");
+    gamerules = document.getElementById("gamerules");
+    player1img = document.getElementById("player1img");
+    player2img = document.getElementById("player2img");
+    gameTable = document.getElementById("gameTable");
+    isPlayer1turn = true;
+    roundTime;
+    timerBar = document.getElementById("timerBar");
+    downloadTimer;
+    table = [];
+    for(let i = 0; i < 6;i++){
+        let temp = [];
+        for(let j = 0; j < 7; j++){
+            temp.push(0);
+        }
+        table.push(temp);
+    }
+    roundTime = document.getElementById("timerval").value;
+    timerBar.max = roundTime;
+    time(roundTime);
+    player2img.classList.add("gray");
+    if(player2TB[0].value != "" && player2TB[1].value != ""){
     if(!isGamemodeMulti){
-        player2img.src = "mosi.png";
+        player2img.src = "src/mosi.png";
     }
     else {
-        player2img.src = "player2.png";
+        player2img.src = "src/player2.png";
     }
     menudiv.style.display = "none";
     gamediv.style.display = "block";
@@ -145,9 +174,17 @@ if(player2TB[1].value != ""){
 }
 }
 function Menu(){
-menudiv.style.display = "block";
-gamediv.style.display = "none";
-clearInterval(downloadTimer);
+    for(let j = 1; j <= 7; j++){
+        column = document.querySelectorAll(".col"+ j);
+        for(let i = 0; i < 6;i++){
+            column[i].innerHTML = "";
+        }
+    }
+    table = [];
+    windiv.style.display = "none";
+    menudiv.style.display = "block";
+    gamediv.style.display = "none";
+    clearInterval(downloadTimer);
 }
 function Gamemode(){
     if(isGamemodeMulti){
