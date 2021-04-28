@@ -1,5 +1,6 @@
 # CONNECT 4 - IKHÖK version
 [Ide kattintva játszhatsz a játékkal](https://www.nagybrandy.hu/connect4 "Ide kattintva játszhatsz a játékkal")
+
 Nagy Bendegúz
 M4ZRL5
 Webprogramozás - számonkérés
