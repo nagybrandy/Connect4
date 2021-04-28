@@ -3,7 +3,7 @@ html{
     font-family: Bebas neue;
     color: #f6e6f2;
     background-image: url(back.png);
-    background-size: contain;
+    background-size: auto;
     background-repeat: repeat-x, repeat-y;
     background-position-y: 300px, 0;
     background-position-x: 100px, 100px;
@@ -57,6 +57,25 @@ button {
     text-shadow: violet 0px 0px 5px;
     transition: 0.2s;
 }
+#winner p {
+    font-family: NEON;
+    color: #CD86B9;
+    font-size: 80px;
+    text-shadow: violet 0px 0px 5px;
+    letter-spacing: 5px;
+    animation:  glow 1s ease-in-out infinite alternate;
+    margin-bottom: 450px;
+    margin-top: 200px;
+}
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
 button:hover {
     box-shadow: violet 0px 0px 15px,inset violet 0px 0px 10px;
     text-shadow: violet 0px 0px 15px;
