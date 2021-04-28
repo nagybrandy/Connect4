@@ -38,5 +38,5 @@
 ## TO-DO LIST
 - [x] Szebben nézzen ki a győzelem
 - [ ] reszponzivitás telefonra, kisebb képernyőre
-- [] kód rendszerezése
+- [ ] kód rendszerezése
 - [x] fájlok rendszerezése
