@@ -46,7 +46,7 @@ Az alap feladatok (35 pont)
 - [x] Időlimit (+2 pont)
 
 # TO-DO LIST
-- [ ] Szebben nézzen ki a győzelem
+- [x] Szebben nézzen ki a győzelem
 - [ ] reszponzivitás telefonra, kisebb képernyőre
 - [ ] kód rendszerezése
 - [ ] fájlok rendszerezése
