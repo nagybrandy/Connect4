@@ -1,12 +1,9 @@
 # CONNECT 4 - IKHÖK version
 [Ide kattintva játszhatsz a játékkal](http://www.nagybrandy.hu/connect4 "Ide kattintva játszhatsz a játékkal")
 
-Nagy Bendegúz
-
-M4ZRL5
-
-Webprogramozás - számonkérés
-
+    Nagy Bendegúz
+    M4ZRL5
+    Webprogramozás - számonkérés
     Ezt a megoldást a fent írt hallgató küldte be és készítette a Webprogramozás kurzus számonkéréséhez.
     Kijelentem, hogy ez a megoldás a saját munkám. Nem másoltam vagy használtam harmadik féltől 
     származó megoldásokat. Nem továbbítottam megoldást hallgatótársaimnak, és nem is tettem közzé. 
