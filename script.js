@@ -225,9 +225,9 @@ let isGamemodeMulti = true;
                     }
                 }
                 //atlok
-           /*     for(let i = 3; i < 7; i++){
-                    for(let j = 0; j < 3; j++){
-                        if(check == table[i][j] && check == table[i-2][j+2] && check == table[i-3][j+3] && check != ""){
+                for(let i = 0; i < 3; i++){
+                    for(let j = 3; j < 7; j++){
+                        if(table[i][j] == table[i+1][j-1] && table[i][j] == table[i+2][j-2] && check == table[i+3][j-3] && table[i][j] != ""){
                             if(isPlayer1turn){
                                 alert("WINNER: " + player1name.innerHTML);
                                 Menu();
@@ -237,7 +237,20 @@ let isGamemodeMulti = true;
                             }
                         }
                     }
-                }*/
+                }
+                for(let i = 2; i >= 0; i--){
+                    for(let j = 0; j < 4; j++){
+                        if(table[i][j] == table[i+1][j+1] && table[i][j] == table[i+2][j+2] && check == table[i+3][j+3] && table[i][j] != ""){
+                            if(isPlayer1turn){
+                                alert("WINNER: " + player1name.innerHTML);
+                                Menu();
+                            } else {
+                                alert("WINNER: " + player2name.innerHTML);
+                                Menu();
+                            }
+                        }
+                    }
+                }
             }
         function Won(){
             if(isPlayer1turn){
